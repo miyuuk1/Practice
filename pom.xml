@@ -4,7 +4,7 @@
   <groupId>ki.miyuu.webapp</groupId>
   <artifactId>WebService</artifactId>
   <packaging>war</packaging>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.2</version>
   <name>WebService Maven Webapp</name>
   <url>http://maven.apache.org</url>
   
