@@ -1,9 +1,13 @@
 package ki.miyuu.webservice;
 
+import javax.ws.rs.*;
+
+@Path("/hello")
 public class WebApp {
 
-	public static void main(String[] args) {
-
+	@GET
+	public String sayHello() {
+		return "Hello world!";
 	}
-
+	
 }
