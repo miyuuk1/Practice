@@ -16,10 +16,10 @@ public class WebApp {
 	@Produces(MediaType.APPLICATION_XML)
 	public ArrayList<Rating> getRatings() {
 		ArrayList<Rating> rt = new ArrayList<Rating>();
-		rt.add(new Rating("Операционные системы", 5));
-		rt.add(new Rating("Вычислительная математика", 4));
-		rt.add(new Rating("ЭВМ и ПУ", 5));
-		rt.add(new Rating("Схемотехника", 4));
+		rt.add(new Rating("Operating Systems", 5));
+		rt.add(new Rating("Computing", 4));
+		rt.add(new Rating("Computer Architecture", 5));
+		rt.add(new Rating("Electronics", 4));
 		return rt;
 	}
 	
