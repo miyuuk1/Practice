@@ -10,17 +10,14 @@ import javax.ws.rs.core.MediaType;
 // ќпредел€ем путь по которому будет доступен сервис
 @Path("/ratings")
 public class WebApp {
-
-	@GET
-	@Path("/ilyaionow")
+	
+	UserRating rating = new UserRating();
+	
+	@POST
+	@Path("/form")
 	@Produces(MediaType.APPLICATION_XML)
-	public ArrayList<Rating> getRatings() {
-		ArrayList<Rating> rt = new ArrayList<Rating>();
-		rt.add(new Rating("Operating Systems", 5));
-		rt.add(new Rating("Computing", 4));
-		rt.add(new Rating("Computer Architecture", 5));
-		rt.add(new Rating("Electronics", 4));
-		return rt;
+	public ArrayList<Rating> getRatings(@FormParam("name") String name) {
+		return rating.getUserRating(name); 
 	}
 	
 }
