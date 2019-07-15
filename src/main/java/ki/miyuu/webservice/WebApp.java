@@ -19,5 +19,5 @@ public class WebApp {
 	public ArrayList<Rating> getRatings(@FormParam("name") String name) {
 		return rating.getUserRating(name); 
 	}
-	
+		
 }
