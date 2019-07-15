@@ -1,10 +1,12 @@
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
 <html>
 <body>
-<h2>Hello World!</h2>
-<form method="get" action="api/ratings/ilyaionow">
-	<button type="submit" value="Get Response">
-	
-	</button>
+<form method="POST" action="api/ratings/form">
+	Enter name:
+	<input type="text" name="name">
+	<input type="submit">
 </form>
 </body>
 </html>

@@ -1,33 +1,37 @@
 package ki.miyuu.webservice;
 
-import java.util.ArrayList;
+import java.util.Map;
+import java.util.HashMap;
 
-public class UserRating {
+public enum UserRating {
+	instance;
+	private Map<String, Rating> content = new HashMap<>();
 	
-	private ArrayList<User> userList;
-	
-	public UserRating() {
-		userList = new ArrayList<User>();
-		int[] rates =  {5, 4, 5, 4};
-		userList.add(new User("ionow", rates));
+	private UserRating() {
+		
+		Rating rating = new Rating("Computer Architecture", "1");
+		rating.setRating("5");
+		
+		content.put("1", rating);
+		
+		rating = new Rating("Computational Mathematics", "2");
+		rating.setRating("4");
+		
+		content.put("2", rating);
+		
+		rating = new Rating("Electronics", "3");
+		rating.setRating("4");
+		
+		content.put("3", rating);
+		
+		rating = new Rating("Operating Systems", "4");
+		rating.setRating("5");
+		
+		content.put("4", rating);
+		
 	}
 	
-	public ArrayList<Rating> getUserRating(String name) {
-		for (User u : userList) {
-			if (u.getName().contentEquals(name)) {
-				return u.getRating();
-			}
-		}
-		int[] defRate = { 0, 0, 0, 0 };
-		User nu = addUser(name, defRate);
-		return nu.getRating();
+	public Map<String, Rating> getContent() {
+		return content;
 	}
-	
-	public User addUser(String name, int[] rates) {
-		User u = new User(name, rates);
-		userList.add(u);
-		return u;
-	}
-	
-	
 }

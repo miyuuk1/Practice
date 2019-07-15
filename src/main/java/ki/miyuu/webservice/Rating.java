@@ -1,47 +1,45 @@
 package ki.miyuu.webservice;
 
-import java.io.Serializable;
-
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name="rating")
-public class Rating implements Serializable{
+@XmlRootElement
+public class Rating {	
 
-	private static final long serialVersionUID = 1L;
-	
 	private String subject;
-	private int rate;
-	private int id;
-	private int nextId = 0;
+	private String rating;
+	private String id;
 	
-	public Rating() {};
-	public Rating(String n, int r) {
-		subject = n;
-		rate = r;
-		id = nextId;
-		nextId++;
+	public Rating() {
+		
 	}
-	@XmlElement
+	
+	public Rating(String s, String id) {
+		subject = s;
+		this.id = id;
+	}
+	
+	public void setSubject(String s) {
+		subject = s;
+	}
+	
 	public String getSubject() {
 		return subject;
 	}
 	
-	@XmlElement
-	public int getRate() {
-		return rate;
-	}
-
-	
-	public void setRate(int r) {
-		rate = r;
+	public void setRating(String r) {
+		rating = r;
 	}
 	
-	public int getId() {
+	public String getRating() {
+		return rating;
+	}
+	
+	public void setId(String id) {
+		this.id = id;
+	}
+	
+	public String getId() {
 		return id;
 	}
 	
-	public String getInfo() {
-		return subject + " " + rate;
-	}
 }
